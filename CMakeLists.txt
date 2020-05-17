@@ -1,15 +1,13 @@
 cmake_minimum_required(VERSION 3.12.4)
 
 IF(DEFINED ENV{TRAVIS_BUILD_NUMBER})
-    set(VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
+  set(VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 ELSE()  
-    set(VERSION 0.0.1)
+  set(VERSION 0.0.1)
 ENDIF()
 
 project(veditor VERSION ${VERSION})
 
-
-find_package(GTest REQUIRED)
 find_package(Threads)
 find_package(Doxygen COMPONENTS dot)
 

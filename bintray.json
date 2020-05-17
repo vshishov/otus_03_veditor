@@ -13,7 +13,7 @@
   "files": [
     {
       "includePattern": "\./(.*\.deb)",
-      "uploadPattern": "pool/main/$1",
+      "uploadPattern": "$1",
       "matrixParams": {
         "deb_distribution": "bionic",
         "deb_component": "main",

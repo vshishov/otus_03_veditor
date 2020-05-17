@@ -1,6 +1,6 @@
 {
   "package": {
-    "name": "upload",
+    "name": "package",
     "repo": "otus-cpp",
     "subject": "vshishov"
   },
@@ -13,7 +13,7 @@
   "files": [
     {
       "includePattern": "\./(.*\.deb)",
-      "uploadPattern": "otus_cpp/package/$1",
+      "uploadPattern": "pool/main/$1",
       "matrixParams": {
         "deb_distribution": "bionic",
         "deb_component": "main",

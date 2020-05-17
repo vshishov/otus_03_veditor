@@ -8,24 +8,39 @@ ENDIF()
 
 project(veditor VERSION ${VERSION})
 
-set(EXEC_NAME ${CMAKE_PROJECT_NAME})
-set(TEST_NAME gtest_${CMAKE_PROJECT_NAME})
-
-message("CMAKE_PROJECT_NAME = ${CMAKE_PROJECT_NAME}")
 
 find_package(GTest REQUIRED)
 find_package(Threads)
 find_package(Doxygen COMPONENTS dot)
 
+set(EXEC_NAME ${CMAKE_PROJECT_NAME})
+set(TEST_NAME gtest_${CMAKE_PROJECT_NAME})
 set(SRC_PATH "src/")
 set(TEST_PATH "test/")
-include_directories("inc/")
+set(GTEST_SRCDIR "/usr/src/gtest/")
 
 add_executable(${EXEC_NAME} ${SRC_PATH}/main.cpp)
 
-add_executable(${TEST_NAME} 
+
+
+if(EXISTS "${GTEST_SRCDIR}/CMakeLists.txt")
+  add_subdirectory(${GTEST_SRCDIR}/ ${CMAKE_BINARY_DIR}/gtest/ EXCLUDE_FROM_ALL)
+
+  add_executable(${TEST_NAME} 
     ${TEST_PATH}/main_test.cpp     
-)
+  )
+
+  target_link_libraries(${TEST_NAME}
+    PRIVATE
+    gtest
+    ${CMAKE_THREAD_LIBS_INIT})
+  add_test(${TEST_NAME} ${TEST_NAME})
+else()
+  message(
+    WARNING
+    "Test suite will not be launched because GTest sources is not found at "
+    "${GTEST_SRCDIR}.")
+endif()
 
 # if(DOXYGEN_FOUND)
 #   configure_file(
@@ -42,11 +57,6 @@ add_executable(${TEST_NAME}
 set_target_properties(${EXEC_NAME} ${TEST_NAME} PROPERTIES
     CXX_STANDARD 17
     CXX_STANDARD_REQUIRED ON
-)
-
-target_link_libraries(${TEST_NAME}
-    ${GTEST_LIBRARIES} 
-    ${CMAKE_THREAD_LIBS_INIT}
 )
 
 if (MSVC)
@@ -66,9 +76,4 @@ set(CPACK_PACKAGE_VERSION_MINOR "${PROJECT_VERSION_MINOR}")
 set(CPACK_PACKAGE_VERSION_PATCH "${PROJECT_VERSION_PATCH}")
 
 set(CPACK_PACKAGE_CONTACT wladimir.shishov@gmail.com)
-
 include(CPack)
-
-enable_testing()
-
-add_test(${TEST_NAME} ${TEST_NAME})

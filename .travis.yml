@@ -19,7 +19,8 @@ script:
 deploy:
   - provider: bintray
     file: bintray.json
-    user: vshishov
+    user: $BINTRAY_USER
+    key: $BINTRAY_API_KEY
     cleanup: false
     edge: true
 

@@ -19,8 +19,6 @@ set(GTEST_SRCDIR "/usr/src/gtest/")
 
 add_executable(${EXEC_NAME} ${SRC_PATH}/main.cpp)
 
-
-
 if(EXISTS "${GTEST_SRCDIR}/CMakeLists.txt")
   add_subdirectory(${GTEST_SRCDIR}/ ${CMAKE_BINARY_DIR}/gtest/ EXCLUDE_FROM_ALL)
 

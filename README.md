@@ -1,2 +1,3 @@
-# otus_03_veditor
-Otus cpp 03 home work. Vector editor
+# otus_05
+Otus cpp 05 homework. 
+Vector editor

@@ -4,4 +4,7 @@
 
 # otus_cpp_05
 Otus cpp 05 homework. 
+
 Vector editor
+
+Документация доступна на <https://vshishov.github.io/otus_cpp_05/>

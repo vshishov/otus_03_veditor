@@ -24,3 +24,11 @@ deploy:
     cleanup: false
     edge: true
 
+  - provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN
+    keep_history: false
+    local_dir: html
+    on:
+      branch: master
+

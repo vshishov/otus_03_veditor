@@ -7,7 +7,7 @@
 namespace svg 
 {
 /**
- * @brief Class Line of primitive
+ * @brief Class point of primitive
  */ 
 class CPoint : public CBasePrimitive
 {

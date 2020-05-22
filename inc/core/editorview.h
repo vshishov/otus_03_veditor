@@ -11,9 +11,9 @@
 
 namespace svg {
 
-/**
- * @brief Class viewer
- */   
+ /**
+ * @brief Class vector editor viewer
+ */ 
 class CEditorView : public IObserver
 {
 public:

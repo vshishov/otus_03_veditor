@@ -9,7 +9,7 @@
 namespace svg {
   
  /**
- * @brief Class vector edit model
+ * @brief Class vector editor model
  */ 
 class CEditorModel : public IObservable
 {

@@ -52,7 +52,7 @@ if(DOXYGEN_FOUND)
   add_custom_target(
     html
     ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile
-    WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/../
+    WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/
     COMMENT "Creating HTML documentation with Doxygen" VERBATIM)
 endif()
 

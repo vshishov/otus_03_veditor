@@ -13,11 +13,17 @@ find_package(Doxygen COMPONENTS dot)
 
 set(EXEC_NAME ${CMAKE_PROJECT_NAME})
 set(TEST_NAME gtest_${CMAKE_PROJECT_NAME})
+include_directories("inc/")
 set(SRC_PATH "src/")
 set(TEST_PATH "test/")
 set(GTEST_SRCDIR "/usr/src/gtest/")
 
-add_executable(${EXEC_NAME} ${SRC_PATH}/main.cpp)
+add_executable(${EXEC_NAME} 
+  ${SRC_PATH}/main.cpp
+  ${SRC_PATH}/core/editorview.cpp 
+  ${SRC_PATH}/core/editorcontroller.cpp 
+  ${SRC_PATH}/core/editormodel.cpp 
+)
 
 if(EXISTS "${GTEST_SRCDIR}/CMakeLists.txt")
   add_subdirectory(${GTEST_SRCDIR}/ ${CMAKE_BINARY_DIR}/gtest/ EXCLUDE_FROM_ALL)
@@ -38,17 +44,17 @@ else()
     "${GTEST_SRCDIR}.")
 endif()
 
-# if(DOXYGEN_FOUND)
-#   configure_file(
-#     ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in
-#     ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile
-#     @ONLY)
-#   add_custom_target(
-#     html
-#     ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile
-#     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/../
-#     COMMENT "Creating HTML documentation with Doxygen" VERBATIM)
-# endif()
+if(DOXYGEN_FOUND)
+  configure_file(
+    ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in
+    ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile
+    @ONLY)
+  add_custom_target(
+    html
+    ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile
+    WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/../
+    COMMENT "Creating HTML documentation with Doxygen" VERBATIM)
+endif()
 
 set_target_properties(${EXEC_NAME} ${TEST_NAME} PROPERTIES
     CXX_STANDARD 17

@@ -1,10 +1,10 @@
 DOXYFILE_ENCODING      = UTF-8
 
-PROJECT_NAME           = "Otus cpp course Project"
+PROJECT_NAME           = "Otus cpp course project 5. Vector editor."
 
 PROJECT_NUMBER         =
 
-PROJECT_BRIEF          = 
+PROJECT_BRIEF          = "Simple vector editor architecture"
 
 PROJECT_LOGO           =
 

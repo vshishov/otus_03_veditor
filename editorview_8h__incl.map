@@ -1,0 +1,11 @@
+<map id="editorview.h" name="editorview.h">
+<area shape="rect" id="node2" href="$observer_8h.html" title="common/observer.h" alt="" coords="5,229,156,256"/>
+<area shape="rect" id="node6" href="$editormodel_8h.html" title="editormodel.h" alt="" coords="213,155,327,181"/>
+<area shape="rect" id="node10" href="$editorcontroller_8h.html" title="editorcontroller.h" alt="" coords="365,80,498,107"/>
+<area shape="rect" id="node12" href="$button_8h.html" title="gui/button.h" alt="" coords="571,80,671,107"/>
+<area shape="rect" id="node15" href="$consolecanvas_8h.html" title="canvas/consolecanvas.h" alt="" coords="727,80,907,107"/>
+<area shape="rect" id="node7" href="$iprimitive_8h.html" title="primitives/iprimitive.h" alt="" coords="453,229,620,256"/>
+<area shape="rect" id="node8" href="$icanvas_8h.html" title="canvas/icanvas.h" alt="" coords="409,304,544,331"/>
+<area shape="rect" id="node9" href="$color_8h.html" title="common/color.h" alt="" coords="568,304,695,331"/>
+<area shape="rect" id="node11" href="$itool_8h.html" title="tools/itool.h" alt="" coords="402,155,501,181"/>
+</map>

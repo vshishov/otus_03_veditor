@@ -1,0 +1,13 @@
+<map id="icanvas.h" name="icanvas.h">
+<area shape="rect" id="node2" href="$consolecanvas_8h.html" title="consolecanvas.h" alt="" coords="5,80,136,107"/>
+<area shape="rect" id="node4" href="$editormodel_8h.html" title="editormodel.h" alt="" coords="121,155,234,181"/>
+<area shape="rect" id="node6" href="$iprimitive_8h.html" title="iprimitive.h" alt="" coords="274,80,371,107"/>
+<area shape="rect" id="node3" href="$editorview_8h.html" title="editorview.h" alt="" coords="98,304,201,331"/>
+<area shape="rect" id="node5" href="$editorcontroller_8h.html" title="editorcontroller.h" alt="" coords="249,229,383,256"/>
+<area shape="rect" id="node7" href="$button_8h.html" title="button.h" alt="" coords="149,229,225,256"/>
+<area shape="rect" id="node8" href="$line_8h.html" title="line.h" alt="" coords="575,229,633,256"/>
+<area shape="rect" id="node10" href="$point_8h.html" title="point.h" alt="" coords="471,155,537,181"/>
+<area shape="rect" id="node12" href="$itool_8h.html" title="itool.h" alt="" coords="369,155,431,181"/>
+<area shape="rect" id="node9" href="$linetool_8h.html" title="linetool.h" alt="" coords="471,304,553,331"/>
+<area shape="rect" id="node11" href="$pointtool_8h.html" title="pointtool.h" alt="" coords="458,229,550,256"/>
+</map>

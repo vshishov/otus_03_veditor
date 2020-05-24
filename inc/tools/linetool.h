@@ -10,10 +10,10 @@ class CLineTool : public ITool
 public:
   CLineTool() = default;
 
-  std::shared_ptr<IPrimitive> Create() override
+  std::unique_ptr<IPrimitive> Create() override
   {
 
-    return std::make_shared<CLine>(std::make_unique<CPoint>(), std::make_unique<CPoint>());
+    return std::make_unique<CLine>(std::make_unique<CPoint>(), std::make_unique<CPoint>());
   }
 
   virtual ~CLineTool() = default;

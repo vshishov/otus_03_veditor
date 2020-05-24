@@ -5,23 +5,22 @@
 namespace svg {
 
 CEditorView::CEditorView(std::shared_ptr<CEditorModel> a_pModel, std::shared_ptr<CEditorController> a_pController)
-  : m_pModel(a_pModel)
-  , m_pController(a_pController)
+  : m_pModel(std::move(a_pModel))
+  , m_pController(std::move(a_pController))
 {
   assert(m_pModel);
   assert(m_pModel);
-  m_pModel->AddObserver(this);
   m_pCanvas = std::make_shared<CConsoleCanvas>();
 
-  m_pBtnOpen->OnClick = std::bind(&CEditorView::OnClickBtnOpen, this);
-  m_pBtnSave->OnClick = std::bind(&CEditorView::OnClickBtnSave, this);
-  m_pBtnClear->OnClick = std::bind(&CEditorView::OnClickBtnClear, this);
+  m_pBtnOpen->SetOnClick( std::bind(&CEditorView::OnClickBtnOpen, this) );
+  m_pBtnSave->SetOnClick( std::bind(&CEditorView::OnClickBtnSave, this) );
+  m_pBtnClear->SetOnClick( std::bind(&CEditorView::OnClickBtnClear, this) );
 
-  m_pBtnColor->OnClick = std::bind(&CEditorView::OnClickBtnColor, this);
+  m_pBtnColor->SetOnClick( std::bind(&CEditorView::OnClickBtnColor, this) );
 
-  m_pBtnToolPoint->OnClick = std::bind(&CEditorView::OnClickBtnToolPoint, this);
-  m_pBtnToolLine->OnClick = std::bind(&CEditorView::OnClickBtnToolPoint, this);
-  m_pBtnToolDelete->OnClick = std::bind(&CEditorView::OnClickBtnToolDelete, this);
+  m_pBtnToolPoint->SetOnClick( std::bind(&CEditorView::OnClickBtnToolPoint, this) );
+  m_pBtnToolLine->SetOnClick( std::bind(&CEditorView::OnClickBtnToolPoint, this) );
+  m_pBtnToolDelete->SetOnClick( std::bind(&CEditorView::OnClickBtnToolDelete, this) );
 }
 
 void CEditorView::Update()

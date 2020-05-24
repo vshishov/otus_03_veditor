@@ -2,12 +2,14 @@
 
 #include "primitives/iprimitive.h"
 
+#include <memory>
+
 namespace svg {
 
 class ITool
 {
 public:  
-  virtual std::shared_ptr<IPrimitive> Create() = 0;
+  virtual std::unique_ptr<IPrimitive> Create() = 0;
   virtual ~ITool() = default;
 };
 

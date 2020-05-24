@@ -7,6 +7,7 @@
 
 namespace svg {
 
+using FuncOnClick = std::function<void(void)>;
 /**
  * @brief Class button
  */ 
@@ -21,10 +22,19 @@ public:
   }
   ~CButton() = default;
 
-  std::function<void(void)> OnClick;
+  void SetOnClick(FuncOnClick a_OnClick)
+  {
+    m_OnClick = a_OnClick;
+  }
+
+  void OnClick()
+  {
+    m_OnClick();
+  }
 
 private:
   std::string m_strCaption;
+  FuncOnClick m_OnClick;
 };
 
 } /* end svg::*/

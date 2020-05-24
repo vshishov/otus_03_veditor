@@ -17,7 +17,10 @@ namespace svg {
 class CEditorView : public IObserver
 {
 public:
-  explicit CEditorView(std::shared_ptr<CEditorModel> a_pModel, std::shared_ptr<CEditorController> a_pController);
+  explicit CEditorView(
+    std::shared_ptr<CEditorModel> a_pModel, 
+    std::shared_ptr<CEditorController> a_pController
+  );
   ~CEditorView() = default;
 
   void Update() override;

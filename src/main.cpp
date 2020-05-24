@@ -7,11 +7,11 @@
 
 int main(int, const char**) 
 {
-  std::shared_ptr<svg::CEditorModel> pModel = std::make_shared<svg::CEditorModel>();  
-  std::shared_ptr<svg::CEditorController> pController = std::make_shared<svg::CEditorController>(pModel);
-  std::shared_ptr<svg::CEditorView> pView = std::make_shared<svg::CEditorView>(pModel, pController);
-
+  auto pModel = std::make_shared<svg::CEditorModel>();  
+  auto pController = std::make_shared<svg::CEditorController>(pModel);
+  auto pView = std::make_shared<svg::CEditorView>(pModel, pController);
+  pModel->Subscribe(pView);
   pController->Run();
-
+  pModel->Unsubscribe(pView);
   return 0;
 }

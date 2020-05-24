@@ -3,7 +3,7 @@
 namespace svg {
   
 CEditorController::CEditorController(std::shared_ptr<CEditorModel> a_pModel)
-  : m_pModel(a_pModel)
+  : m_pModel(std::move(a_pModel))
 {}
 
 

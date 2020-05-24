@@ -10,9 +10,9 @@ class CPointTool : public ITool
 public:
   CPointTool() = default;
 
-  std::shared_ptr<IPrimitive> Create() override
+  std::unique_ptr<IPrimitive> Create() override
   {
-    return std::make_shared<CPoint>();
+    return std::make_unique<CPoint>();
   }
 
   virtual ~CPointTool() = default;
